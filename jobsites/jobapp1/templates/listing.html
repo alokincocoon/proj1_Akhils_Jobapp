@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/listing.css' %}">
+</head>
+<body>
+    {% if messages %}
+    {% for m in messages%}
+        <div class = "display">
+            <span class = "closebtn" onclick = "this.parentElement.style.display='none';">&times;</span>
+            <p > {{ m }} </p>
+        </div>    
+    {% endfor%}          
+    {% endif%}
+    <div class="heading">
+    <h1 >Applicant Listing Page</h1> 
+    </div>
+        <a href="{% url 'newuser' %}" class="add-button"> New</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th >Email</th>
+                <th>Job Title</th>
+                <th>Phone Number</th>
+                <th>Edit</th>
+                <th>Delete</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{ j.fullname }}</td>
+                <td >{{ j.email }}</td>
+                <td>{{j.job_type}}</td>
+                <td>{{ j.phonenumber }}</td>
+                <td><a href="/edit?userid={{j.id}}"><button class="edit-button">Edit</button></a></td>
+                <td><a href="/delete?userid={{j.id}}"><button class="delete-button">Delete</button></a></td> 
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,175 @@
+*{
+    margin:5px;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(circle, black 0%, darkgray 50%, white 100%);;
+}
+.container{
+    position: relative;
+    max-width: 700px;
+    width:100%;
+    background:#fff;
+    padding:25px;
+    border-radius: 8px;
+}
+.container header{
+    font-size: 1.5rem;
+    color:#333;
+    font-weight: 500;
+    text-align: center;
+}
+.container .form{
+    margin-top:30px;
+}
+.form .input-box{
+    width: 100%;
+    margin-top: 20px;
+}
+.input-box label{
+    color:#333;
+}
+.form .input-box input {
+    position:relative;
+    height: 30px;
+    width:96%;   
+     outline:none;
+    font-size:1rem;
+    color: #707070;
+    margin-top: 8px;
+    border:1px solid #ddd;
+    border-radius: 6px;
+    padding:15px;
+}
+.form .input-box select {
+    position: relative;
+    height: 30px;
+    width: 96%;
+    color: #707070;
+    outline: none;
+    border-radius: 5px;
+    border:1px solid #ddd;
+
+    background-color: white;
+    font-size: 1rem;
+    
+}
+.form .column{
+    display:flex;
+    gap: 15px;
+}
+
+
+.form :where(.gender-option, .gender){
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    
+   
+   
+}
+.form .gender{
+    column-gap:5px;
+}
+.form :where(.gender input, .gender label)
+{
+    cursor:pointer;
+}
+.gender-box{
+    color:#333;
+
+    margin-top: 20px;
+}
+.job_type{
+    color:#333;
+    margin-top: 20px;
+}
+.job_types_main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 15px;
+}
+
+
+
+button
+{
+    background-color: black;
+    height: 30px;
+    width:100px;
+    border-radius: 4px;
+    margin-top:20px;
+    color:hsl(0, 100%, 100%);
+}
+.submission
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.address{
+    margin-top: 20px;
+   border:#ddd;
+   resize: none;
+    
+}
+.input-box p{
+   font-size:15px;
+   color:red;
+}
+
+.form .input-box2{
+    width:100%;
+    margin-top: 20px;
+    
+}
+.input-box2 label{
+    color:#333;
+    
+}
+form .input-box2 input{
+    position:relative;
+    height: 30px;
+    width:87%;   
+    outline:none;
+    font-size:1rem;
+    color: #707070;
+    margin-top: 8px;
+    border:1px solid #ddd;
+    border-radius: 6px;
+    padding:15px;
+
+}
+form .input-box2 select{
+    position: relative;
+    border-radius: 5px;
+    height: 29px;
+    border-color:#ddd ;
+    background-color: white;
+    color: #707070;
+}
+
+form .input-box2 select option {
+    color: #707070; 
+}
+.input-box2 p{
+    font-size:15px;
+    color:red;
+ }
+
+/* Style for the date input field */
+input[type="date"]::-webkit-datetime-edit {
+    color:wheat; /* Make the text color transparent */
+}
+/* Style for the date input field */
+
+/* Style for the date input field placeholder text */
+input[type="date"]::placeholder {
+    color: #000; /* Set your desired placeholder text color */
+}

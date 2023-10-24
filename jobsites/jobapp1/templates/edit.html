@@ -1,0 +1,136 @@
+{% load static %}
+<html>
+<head>
+    
+</head>
+<link rel="stylesheet" href="{% static 'css/form.css'%}">
+<body>
+<section class="container">
+  
+    <header>Edit Application Form</header>
+    <form action="" id="form" class="form" name="form" method="post"  onsubmit="return validateForm(event)">
+        {% csrf_token %}
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="please enter your full name" onblur="validateFullname()" name="fullname" id="fullname" value="{{ job.fullname }}"/>
+            <p id="validFirstName"></p>
+        </div>
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" placeholder="please enter your email" name="email" id="email" onblur="validateEmail()"  value={{ job.email }} />
+            <p id="validemail"></p>
+        </div>
+        
+            <div class="input-box">
+                <label>Date Of Birth </label>
+                <input type="text" placeholder="please enter your date of birth" name="dob" id="dob" onfocus="(this.type='date')" value="{{ job.dob }}"/>
+                <p id="validDate"></p>
+            </div>
+            <div class="input-box2">
+                <label>Phone Number</label><br>
+                <select class="countrycode" name="countrycode" id="countrycode">
+                    <option value="{{job.countrycode}}" selected>{{job.countrycode}}</option>
+                    <option value="+91">+91</option>
+                    <option value="+71">+71</option>   
+                </select>
+                <input type="number" placeholder="please enter your phonenumber" name="phonenumber" id="phonenumber" onblur="validatephonenumber()" value={{ job.phonenumber }}
+                />
+                <p id="validphone"></p>
+
+            </div>
+        
+
+        <div class="gender-box">
+            <label>Gender</label>
+            <div class="gender-option">
+            <div class="gender">
+            
+            <input type="radio" name="gender" value="male" {% if job.gender == "male" %} checked {% endif %}>
+            <label for="male">Male</label>
+            </div>
+                <div class="gender">
+            <input type="radio" name="gender" value="female" {% if job.gender == "female" %} checked {% endif %}>
+            <label for="female">Female</label>
+
+            </div>
+            <div class="gender">
+                <input type="radio" name="gender" value="others" {% if job.gender == "others" %} checked {% endif %}>
+                <label for="others">Others</label>
+            </div>
+            </div>
+            <p id="validGender"></p>
+        </div>
+        <div class="column">
+            <div class="input-box">
+                <label>Job Type</label>
+                <select name="job_type" id="job_type" onblur="validateJobrole()">
+                    <option value="{{job.job_type}}" selected>{{ job.job_type }}</option>
+                   
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="Cloud Engineer">Cloud engineer</option>
+                </select>
+            </div>
+        
+        <div class="input-box">
+            <label>Experience</label>
+            <select name="experience_type" id="experience_type" onblur="validateExperienceyear()">
+                <option value="{{job.experience_type}}" selected>{{job.experience_type}}</option>
+                <option value="0-1 years">0-1 years</option>
+                <option value="1-2 years">1-2 years</option>
+                <option value="2-4 years">2-4 years</option>
+                <option value="4-5 years">4-5 years</option>
+                <option value="5+ years">5+ years</option>
+            </select>
+        </div>
+    </div>
+    <div class="column">
+        <div class="input-box">
+            <label>Address Line 1</label>
+            <input type="text" placeholder="please enter the address" name="address" id="address" value={{ job.address_line1 }} onblur="validateaddress()"/>
+            <p id="validaddress"></p>
+        </div>
+        <div class="input-box">
+            <label>Address line 2</label>
+            <input type="text" placeholder="please enter the address" name="address2" id="address2" value={{ job.address_line2 }} onblur="validateaddress2()"/>
+            <p id="validaddress2"></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="input-box">
+            <label>City </label>
+            <input type="text" placeholder="please enter the city" name="city" id="city" value={{ job.city }} onblur="validateCity()"/>
+            <p id="validcity"></p>
+        </div>
+        <div class="input-box">
+            <label>Pin code</label>
+            <input type="text" placeholder="please enter the pincode" name="pincode" id="pincode" value={{job.pincode}} onblur="validatepinnumber()"/>
+            <p id="pinvalid"></p>
+        </div>
+    </div>
+
+    <div class="column">
+        
+        <div class="input-box">
+            <label>State</label>
+            <input type="text" placeholder="please enter the state" name="state" id="state" onblur="validateState()" value={{ job.state }}
+            />
+            <p id="statevalid"></p>
+        </div>
+        <div class="input-box">
+            <label>Country</label>
+            <input type="text" placeholder="please enter the state" name="country" id="country" onblur="validateCountry()" value="{{ job.country }}"/>
+           <p id="countryvalid"></p>
+        </div>
+    </div>
+    
+    <div class="submission">
+    <button type="submit" value="submit">submit</button>
+    </div>
+    </form>
+</section>    
+<script src="{% static 'js/new.js' %}"></script>
+</body>
+</html>
