@@ -1,0 +1,147 @@
+/* css page that provides the styles for the listing page */
+table {
+    margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Background styles for the body */
+body {
+    background-image: radial-gradient(circle, black 0%, darkgray 50%, white 100%);
+}
+/* Styles for table headers */
+th {
+    text-align: center;
+    padding: 8px;
+    
+}
+/* Styles for table cells */
+td {
+    text-align: center;
+    padding: 8px;
+}
+/* Styles for table headers */
+th {
+    
+    background-color: #0c0505;
+    color: #fff;
+    font-size: 25px;
+    font-style: normal;
+    
+}
+/* Color for odd rows */
+/* Styles for odd rows */
+tr:nth-child(odd) {
+    background-color: white; 
+}
+/* Color for even rows */
+/* Styles for even rows */
+tr:nth-child(even) {
+    background-color: lightgray; 
+}
+/* Styles for add button */
+.add-button{
+    background-color: #0c0505;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+/* Styles for edit and delete buttons */
+.edit-button, .delete-button {
+    background-color: #0c0505;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 70px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Button hover styles */
+.edit-button:hover, .delete-button:hover, .add-button:hover {
+    background-color: gray;
+}
+/* Styles for heading */
+.heading {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    height: 100px;
+}
+/* Styles for the display element */
+.display {
+    padding: 8px;
+    background-image: radial-gradient(circle, black 0%, darkgray 50%, white 100%);
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+/* Styles for the close button */
+.closebtn {
+    margin-left: 15px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Close button hover styles */
+.closebtn:hover {
+    color: black;
+}
+a {
+    text-decoration: none; /* Remove underline */
+    color:black ; /* Set your desired text color */
+}
+/* setting the responsive css for the listing page with a break point 600px */
+
+.search {
+    width: 100px;
+    height: 30px;
+   float: right; 
+   margin-top: 10px;
+   border: solid;
+}
+
+@media only screen and (max-width: 600px) {
+    table 
+    {
+        width: 100%;
+        font-size: 20px;  
+    }
+    h1{
+       width: 100%;
+      }
+    th{
+      display: none;
+      }
+    td {
+        display: block;
+        padding: 6px;
+     }
+    .add-button{
+        width: 300px;
+        font-size: 30px;
+    }
+    .heading {
+        height: auto;
+    }
+}

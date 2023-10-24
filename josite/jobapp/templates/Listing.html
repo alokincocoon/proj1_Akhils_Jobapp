@@ -1,0 +1,54 @@
+{% load static %}
+<html>
+<head>
+<title>Listing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/listing.css' %}">
+</head>
+<body>
+    {% comment %} impoting the icon for the edit and delete button {% endcomment %}
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <div class="search"> 
+     <input type=text placeholder="search ..." >
+     </div>
+   {% if messages %}
+   {% for m in messages%}
+       <div class = "display">
+           <span class = "closebtn" onclick = "this.parentElement.style.display='none';">&times;</span>
+           <p > {{ m }} </p>
+       </div>    
+   {% endfor%}          
+   {% endif%}
+
+    <div class="heading">
+    <h1 >Applicant Listing Page</h1> 
+    </div>
+        <a href="{% url 'newuser' %}" class="add-button"> New Applicant</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th >Email</th>
+                <th>Job Title</th>
+                <th>Phone Number</th>
+                <th>Edit</th>
+                <th>Delete</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{ j.fullname }}</td>
+                <td >{{ j.email }}</td>
+                <td>{{j.job_type}}</td>
+                <td>{{ j.phonenumber }}</td>
+                <td><a href="{% url 'edit' j.id %}"><button class="edit-button"><i class="fas fa-edit"></i></button></a></td>
+                <td><a href="{% url 'delete' j.id %}"><button class="delete-button"><i class="fas fa-trash-alt"></button></a></td> 
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

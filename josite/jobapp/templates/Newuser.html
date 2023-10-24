@@ -1,0 +1,115 @@
+{% extends 'Base.html' %} 
+{% comment %} extended the external css file and javascript file from the base html file {% endcomment %}
+
+{% load static %}
+{% block title %}NewUser Page{% endblock %}
+{% block body %}   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<a href="{% url 'listing' %}">
+    <i class="fas fa-home"></i>
+</a>
+
+<section class="container">
+    <header>Job Application Form</header>    
+    <form action="" id="form" class="form" name="form" method="post"  novalidate>
+        {% csrf_token %}
+
+  <!--  div  for the user's full name -->
+        <div class="input-box">
+            <label class="required">Full Name</label>
+            {{ form.fullname }}
+            <span id="fullname-error" ></span>
+        </div>
+  <!--  div for the user's email -->
+        <div class="input-box">
+            <label class="required">Email</label>
+            {{ form.email }}
+            <span id="email-error"></span>
+        </div>
+  <!--  div  for the user's date of birth -->
+        <div class="input-box">
+            <label class="required">Date Of Birth </label>
+            {{ form.dob }}
+
+            <span id="dob-error"></span>
+        </div>
+  <!-- div for the user's phonenumber with country code -->
+        <div class="input-box2">
+            <label class="required">Phone Number</label><br>
+            {{ form.countrycode }} 
+            {{ form.phonenumber }}          
+            <span id="phone-error"></span>
+        </div>
+        
+   <!-- div contains options for selecting gender -->
+        <div class="gender-box">
+             <label>Gender</label>
+             <div class="gender-option">
+            
+            <div class="gender">
+                {{ form.gender }}
+            </div>
+            
+            </div>
+        </div>
+   <!-- div contains options for selecting the type of job -->
+        <div class="column">
+            <div class="input-box">
+               <label class="required">Job Type</label>
+                   {{ form.job_type }}
+                <span id="job-type-error"></span>
+            </div>
+    <!--  div contains options for selecting experience -->
+        <div class="input-box">
+            <label class="required">Experience</label>
+            {{ form.experience_type }}
+            <span id="experience-error"></span>
+        </div>
+        </div>
+    <!--  div  entering Address line one-->
+        <div class="column">
+          <div class="input-box">
+            <label>Address Line 1</label>
+            {{ form.address }}
+            <span id="validaddress"></span>
+          </div>
+    <!--  div  for entering Address line two -->
+         <div class="input-box">
+            <label>Address line 2</label>
+            {{ form.address2 }}
+
+          </div>
+       </div>
+    <!--  div for entering the city -->
+        <div class="column">
+          <div class="input-box">
+            <label>City </label>
+            {{ form.city }}
+        </div>
+    <!-- This div contains input box for entering the pin code -->
+        <div class="input-box">
+            <label>Pin code</label>
+            {{ form.pincode }}
+         </div>
+        </div>
+    <!-- This div contains input box for entering the State -->
+       <div class="column">
+         <div class="input-box">
+            <label>State</label>
+            {{ form.state }}
+         </div>
+    <!-- This div contains input box for entering the country -->
+        <div class="input-box">
+            <label>Country</label>
+            {{ form.country }}
+         </div>
+       </div>
+    <!-- This div contains the submission part -->
+       <div class="submission">
+         <button type="submit" id="submit" value="submit">Submit</button>
+        </div>
+      
+  </form>
+</section>    
+{% endblock body %}

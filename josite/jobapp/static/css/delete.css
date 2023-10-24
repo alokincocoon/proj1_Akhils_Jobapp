@@ -1,0 +1,56 @@
+/* delete.css */
+
+.button-center
+{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+/* Apply styles to the Confirm Delete button */
+.deletebu {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 40px;
+    width: fit-content;
+    text-align: center;
+    margin-right: 50px;
+    width: fit-content;
+
+}
+
+/* Apply styles to the Cancel link */
+.editbu {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 40px;
+    width: fit-content;
+    text-align: center;
+    margin-right: 50px;
+    border-radius: 4px;
+}
+
+/* Apply styles to the heading and paragraph */
+h2, p {
+    margin-bottom: 20px; 
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+a{
+    text-decoration: none;
+}
+.editbu:hover  {
+    background-color: #555; 
+}
+.deletebu:hover {
+    
+    background-color: #555; 
+    
+}

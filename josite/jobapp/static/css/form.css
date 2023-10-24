@@ -1,0 +1,238 @@
+/* css page that provide the styles for the newuser and edit user page */
+
+*{
+    margin:5px;
+    padding:0;
+    box-sizing: border-box;
+}
+/* it specifies the whole body css  */
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(circle, black 0%, darkgray 50%, white 100%);
+}
+/* css for the container where the fields are defined */
+.container{
+    position: relative;
+    max-width: 700px;
+    width:100%;
+    background:#fff;
+    padding:25px;
+    border-radius: 8px;
+}
+/* css for the heading tag Edit Application form and Job Application form */
+.container header{
+    font-size: 1.5rem;
+    color:#333;
+    font-weight: 500;
+    text-align: center;
+}
+.container .form{
+    margin-top:30px;
+}
+/* specifies the css for the input box */
+.form .input-box{
+    width: 100%;
+    margin-top: 20px;
+}
+/* specifies the color for the css labels */
+.input-box label{
+    color:#333;
+}
+/* it specifies the height width and color for the input box borders colors border radius */
+.form .input-box input {
+    position:relative;
+    height: 30px;
+    width:96%;   
+     outline:none;
+    font-size:1rem;
+    color: #707070;
+    margin-top: 8px;
+    border:1px solid #ddd;
+    border-radius: 6px;
+    padding:15px;
+}
+/* it specifies the properties of select tag of the inputbox */
+.form .input-box select {
+    position: relative;
+    height: 30px;
+    width: 96%;
+    color: #707070;
+    outline: none;
+    border-radius: 5px;
+    border:1px solid #ddd;
+    background-color: white;
+    font-size: 1rem;
+    
+}
+/* it specifies the gap between the columns */
+.form .column{
+    display:flex;
+    gap: 15px;
+}
+
+.form :where(.gender-option, .gender){
+    display: flex;
+    align-items: center;
+      }
+/* it changes the cursor to pointer when the user moves to the gender option */
+.form :where(.gender input, .gender label)
+{
+    cursor:pointer;
+}
+/* it is specifying the color of the gender box and the margin top */
+.gender-box{
+    color:#333;
+
+    margin-top: 20px;
+}
+.job_type{
+    color:#333;
+    margin-top: 20px;
+}
+.job_types_main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 15px;
+}
+/* it specifies the css for the button */
+button
+{
+    background-color: black;
+    height: 30px;
+    width:100px;
+    border-radius: 4px;
+    margin-top:20px;
+    color:hsl(0, 100%, 100%);
+}
+/* it specifies the css for the div tag for the submit button */
+.submission
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.address{
+   margin-top: 20px;
+   border:#ddd;
+   resize: none;
+    
+}
+.input-box span{
+   font-size:15px;
+   color:red;
+   margin-left: 20px;
+}
+
+
+.form .input-box2{
+    width:100%;
+    margin-top: 20px;
+    
+}
+.input-box2 label{
+    color:#333;
+    
+}
+form .input-box2 input{
+    position:relative;
+    height: 30px;
+    width:87%;   
+    outline:none;
+    font-size:1rem;
+    color: #707070;
+    margin-top: 8px;
+    border:1px solid #ddd;
+    border-radius: 6px;
+    padding:15px;
+
+}
+form .input-box2 select{
+    position: relative;
+    border-radius: 5px;
+    height: 32px;
+    border-color:#ddd ;
+    background-color: white;
+    color: #707070;
+}
+/* specifies the css for specifying the color of select tag options */
+form .input-box2 select option {
+    color: #707070; 
+}
+/* specifies the span tag css that shows the alert for the frontend validations */
+.input-box2 span{
+    font-size:15px;
+    color:red;
+    margin-left: 73px;
+   
+ }
+/* css to not display the first child */
+.experience option:first-child{
+    display: none;  
+}
+/* CSS for buttons in delete.html */
+/* Custom styles for the home icon */
+a i.fas.fa-home {
+    color: black;
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-right: 5px; /* Add some right margin between the icon and text */
+}
+
+/* Remove underline from the link */
+a {
+    color: black;
+    text-decoration: none;
+}
+/* css for the required asterick elements */
+.required::after{
+    content: " *";
+    color: red;
+    font-size: 20px;
+}
+.countrycode{
+    width: 40px;
+}
+/* css to not display the first child */
+.countrycode option:first-child{
+    display: none;
+}
+.margin{
+    margin-right: 20px;
+}
+
+/* Base styles (for screens wider than 600px) */
+/* ... (your existing styles) ... */
+
+/* Responsive styles for screens up to 600px */
+@media only screen and (max-width: 600px) {
+    body {
+        align-items: flex-start; /* Align body content to the start (top) */
+    }
+
+    .container {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .form .input-box input, .form .input-box select, .form .input-box2 input, .form .input-box2 select {
+        width: 100%; /* Make inputs full-width */
+    }
+
+    .input-box span, .input-box2 span {
+        margin-left: 0; /* Remove left margin for error messages */
+    }
+
+    .submission {
+        flex-direction: column; /* Stack button vertically */
+        align-items: center; /* Align button to the center */
+        justify-content: center; /* Cenlign button to the start (left) */
+    }
+    button{
+        width: 100%;
+        height: 40px;
+    }
+
+    /* Additional responsive styles can be added here */
+}
